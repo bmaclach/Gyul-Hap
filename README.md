@@ -1,0 +1,3 @@
+This program solves Gyul! Hap! puzzles as seen on the Korean game show The Genius.
+
+Currently, the program only functions in GHCI, and the Gyul! Hap! boards must be user-defined and supplied to the findHaps function. The boards are defined as a list of tuples, where each tuple describes a picture on the board. For example, the tuple (Red, Circle, Black) describes a picture of a red circle on a black background.
