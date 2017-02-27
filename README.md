@@ -1,10 +1,10 @@
 This program solves Gyul! Hap! puzzles as seen on the Korean game show The Genius.
 
-You will need a text file containing information about the Gyul! Hap! board you want to solve. Each line of the text file should contain the colour, shape, and background colour, in that order and seprated by spaces, for a picture on your board. The information for each picture on the board should be on a different line. 
+You will need a text file containing information about the Gyul! Hap! board you want to solve. Each line of the text file should contain the colour, shape, and background colour, in that order and separated by spaces, for a picture on your board. The information for each picture on the board should be on a different line. 
 
 You can see how your file should be formatted by looking at the "exampleInput.txt" file.
 
-To run the program from a command line, navigate to your directory containing the "gyulhap.hs" file as well as your input file, and execute the following command:
+To run the program from a command prompt, navigate to your directory containing the "gyulhap.hs" file as well as your input file, and execute the following command:
 
 cat exampleInput.txt | runhaskell gyulhap
 
