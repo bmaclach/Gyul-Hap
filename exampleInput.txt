@@ -1,0 +1,9 @@
+Yellow Triangle White
+Blue Square White
+Yellow Circle Grey 
+Blue Triangle Black 
+Red Circle White
+Yellow Square White
+Yellow Triangle Grey
+Blue Circle Black
+Red Square Black
