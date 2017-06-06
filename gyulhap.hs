@@ -1,8 +1,8 @@
 import Data.List
 
-data Colour = Red | Blue | Yellow deriving (Show, Eq, Read)
+data Colour = Red | Blue | Yellow | Purple | Green | Orange deriving (Show, Eq, Read)
 
-data Shape = Circle | Square | Triangle deriving (Show, Eq, Read)
+data Shape = Circle | Square | Triangle | Sun | Moon | Star deriving (Show, Eq, Read)
 
 data Background = Black | Grey | White deriving (Show, Eq, Read)
 
