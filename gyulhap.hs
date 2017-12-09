@@ -14,9 +14,9 @@ type Hap = (Tile, Tile, Tile)
 
 main = do
     contents <- getContents
-    let inputBoard = map readTuple $ map listToTuple $ (map . map) decodeShortForm $ map words $ lines contents
+    let inputBoard = map readTuple $ map listToTuple $ (map . map) decodeShortForm $ map words $ filter (not . null) $ lines contents
         solutionHaps = intercalate "\n\n" $ map (intercalate ", ") $ map (mapThreeTuple showTuple) $ findHaps inputBoard
-    putStrLn $ "The haps are:\n\n" ++ solutionHaps
+    putStrLn $ "\nThe haps are:\n\n" ++ solutionHaps
 
 trialBoard :: Board
 trialBoard = [(Yellow, Triangle, White), (Blue, Square, White), (Yellow, Circle, Grey), (Blue, Triangle, Black), (Red, Circle, White), (Yellow, Square, White), (Yellow, Triangle, Grey), (Blue, Circle, Black), (Red, Square, Black)]
@@ -25,6 +25,9 @@ validInput :: [String]
 validInput = ["Red", "Blue", "Yellow", "Purple", "Green", "Orange", "Circle", "Square", "Triangle", "Sun", "Moon", "Star", "Black", "Grey", "White"]
 
 findHaps :: Board -> [Hap]
+findHaps [] = error "Your input file is empty!"
+findHaps [a] = error "Your input file has only one picture. You need at least three. Please update your input file."
+findHaps [a, b] = error "Your input file has only two pictures. You need at least three. Please update your input file."
 findHaps grid =
     let tileSet = splitTriads grid
         evals = map evalHap tileSet
