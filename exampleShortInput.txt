@@ -1,9 +1,9 @@
 Y T W
 B Sq W
-Y C G
-B T B
+Y C Gy
+B T Bk
 R C W
 Y Sq W
-Y T G
-B C B
-R Sq B
+Y T Gy
+B C Bk
+R Sq Bk

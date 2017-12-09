@@ -11,3 +11,33 @@ cat exampleInput.txt | runhaskell gyulhap
 Of course, you should replace "exampleInput.txt" with the name of your input file.
 
 The program can also be run in GHCI. For that, the Gyul! Hap! boards must be user-defined and supplied to the findHaps function. The boards are defined as a list of tuples, where each tuple describes a picture on the board. For example, the tuple (Red, Circle, Black) describes a picture of a red circle on a black background.
+
+## Input file short-forms
+
+You can type up input files more quickly using short-forms! See "exampleShortInput.txt" for an example of how to format an input file with short-forms.
+
+Here is a legend of the short-forms for each property:
+
+### Colours
+
+Red - R
+Blue - B
+Yellow - Y
+Purple - P
+Green - G
+Orange - O
+
+### Shapes
+
+Circle - C
+Square - Sq
+Triangle - T
+Sun - S
+Moon - M
+Star - St
+
+### Backgrounds
+
+Black - Bk
+Grey - Gy
+White - W

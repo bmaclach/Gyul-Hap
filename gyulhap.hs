@@ -14,12 +14,15 @@ type Hap = (Tile, Tile, Tile)
 
 main = do
     contents <- getContents
-    let inputBoard = map readTuple $ map decodeBackground $ map decodeShape $ map decodeColour $ map listToTuple $ map words $ lines contents
+    let inputBoard = map readTuple $ map listToTuple $ (map . map) decodeShortForm $ map words $ lines contents
         solutionHaps = intercalate "\n\n" $ map (intercalate ", ") $ map (mapThreeTuple showTuple) $ findHaps inputBoard
     putStrLn $ "The haps are:\n\n" ++ solutionHaps
 
 trialBoard :: Board
 trialBoard = [(Yellow, Triangle, White), (Blue, Square, White), (Yellow, Circle, Grey), (Blue, Triangle, Black), (Red, Circle, White), (Yellow, Square, White), (Yellow, Triangle, Grey), (Blue, Circle, Black), (Red, Square, Black)]
+
+validInput :: [String]
+validInput = ["Red", "Blue", "Yellow", "Purple", "Green", "Orange", "Circle", "Square", "Triangle", "Sun", "Moon", "Star", "Black", "Grey", "White"]
 
 findHaps :: Board -> [Hap]
 findHaps grid =
@@ -93,29 +96,22 @@ showTuple (colour, shape, background) = show colour ++ " " ++ show shape ++ " " 
 mapThreeTuple :: (a -> b) -> (a, a, a) -> [b]
 mapThreeTuple f (tile1, tile2, tile3) = [f tile1, f tile2, f tile3]
 
-decodeColour :: (String, String, String) -> (String, String, String)
-decodeColour (c, s, b)
-    | c == "Red", c == "Blue", c == "Yellow", c == "Purple", c == "Green", c == "Orange" = (c, s, b)
-    | c == "R" = (c ++ "ed", s, b)
-    | c == "B" = (c ++ "lue", s, b)
-    | c == "Y" = (c ++ "ellow", s, b)
-    | c == "P" = (c ++ "urple", s, b)
-    | c == "G" = (c ++ "reen", s, b)
-    | c == "O" = (c ++ "range", s, b)
-
-decodeShape :: (String, String, String) -> (String, String, String)
-decodeShape (c, s, b)
-	| s == "Circle", s == "Square", s == "Triangle", s == "Sun", s == "Moon", s == "Star" = (c, s, b)
-	| s == "C" = (c, s ++ "ircle", b)
-	| s == "Sq" = (c, s ++ "uare", b)
-	| s == "T" = (c, s ++ "riangle", b)
-	| s == "S" = (c, s ++ "un", b)
-	| s == "M" = (c, s ++ "oon", b)
-	| s == "St" = (c, s ++ "ar", b)
-	
-decodeBackground :: (String, String, String) -> (String, String, String)
-decodeBackground (c, s, b)
-	| b == "Red", b == "Blue", b == "Yellow", b == "Purple", b == "Green", b == "Orange" = (c, s, b)
-	| b == "B" = (c, s, b ++ "lack")
-	| b == "G" = (c, s, b ++ "rey")
-	| b == "W" = (c, s, b ++ "hite")
+decodeShortForm :: String -> String
+decodeShortForm a
+    | isInfixOf [a] validInput = a
+    | a == "R" = "Red"
+    | a == "B" = "Blue"
+    | a == "Y" = "Yellow"
+    | a == "P" = "Purple"
+    | a == "G" = "Green"
+    | a == "O" = "Orange"
+    | a == "C" = "Circle"
+    | a == "Sq" = "Square"
+    | a == "T" = "Triangle"
+    | a == "S" = "Sun"
+    | a == "M" = "Moon"
+    | a == "St" = "Star"
+    | a == "Bk" = "Black"
+    | a == "Gy" = "Grey"
+    | a == "W" = "White"
+    | otherwise = error "There's something in your input file that I can't read! Please double-check the formatting and try again."
