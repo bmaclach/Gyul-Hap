@@ -20,24 +20,24 @@ Here is a legend of the short-forms for each property:
 
 ### Colours
 
-Red - R
-Blue - B
-Yellow - Y
-Purple - P
-Green - G
-Orange - O
+- Red - R
+- Blue - B
+- Yellow - Y
+- Purple - P
+- Green - G
+- Orange - O
 
 ### Shapes
 
-Circle - C
-Square - Sq
-Triangle - T
-Sun - S
-Moon - M
-Star - St
+- Circle - C
+- Square - Sq
+- Triangle - T
+- Sun - S
+- Moon - M
+- Star - St
 
 ### Backgrounds
 
-Black - Bk
-Grey - Gy
-White - W
+- Black - Bk
+- Grey - Gy
+- White - W
