@@ -6,7 +6,7 @@ You can see how your file should be formatted by looking at the "exampleInput.tx
 
 To run the program from a command prompt, navigate to your directory containing the "gyulhap.hs" file as well as your input file, and execute the following command:
 
-cat exampleInput.txt | runhaskell gyulhap
+`cat exampleInput.txt | runhaskell gyulhap`
 
 Of course, you should replace "exampleInput.txt" with the name of your input file.
 

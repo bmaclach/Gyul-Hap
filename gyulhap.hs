@@ -16,7 +16,7 @@ main = do
     contents <- getContents
     let inputBoard = map readTuple $ map listToTuple $ (map . map) decodeShortForm $ map words $ filter (not . null) $ lines contents
         solutionHaps = intercalate "\n\n" $ map (intercalate ", ") $ map (mapThreeTuple showTuple) $ findHaps inputBoard
-    putStrLn $ "\nThe haps are:\n\n" ++ solutionHaps
+    putStrLn $ serveOutputText solutionHaps
 
 trialBoard :: Board
 trialBoard = [(Yellow, Triangle, White), (Blue, Square, White), (Yellow, Circle, Grey), (Blue, Triangle, Black), (Red, Circle, White), (Yellow, Square, White), (Yellow, Triangle, Grey), (Blue, Circle, Black), (Red, Square, Black)]
@@ -118,3 +118,7 @@ decodeShortForm a
     | a == "Gy" = "Grey"
     | a == "W" = "White"
     | otherwise = error "There's something in your input file that I can't read! Please double-check the formatting and try again."
+
+serveOutputText :: String -> String
+serveOutputText "" = "\nThere are zero haps on this board!"
+serveOutputText (haps) = "\nThe haps are:\n\n" ++ haps
