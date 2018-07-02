@@ -4,9 +4,9 @@ You will need a text file containing information about the Gyul! Hap! board you 
 
 You can see how your file should be formatted by looking at the "exampleInput.txt" file.
 
-To run the program from a command prompt, navigate to your directory containing the "gyulhap.hs" file as well as your input file, and execute the following command:
+To run the program from a command prompt, navigate to your directory containing the "gyulhap.hs" file, "solve.sh" file, and your input file, and execute the following command:
 
-`cat exampleInput.txt | runhaskell gyulhap`
+`./solve.sh exampleInput.txt`
 
 Of course, you should replace "exampleInput.txt" with the name of your input file.
 
