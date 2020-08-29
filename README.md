@@ -1,16 +1,16 @@
 This program solves Gyul! Hap! puzzles as seen on the Korean game show The Genius.
 
+A Gyul! Hap! puzzle consists of a grid of pictures, where each picture is defined by a colour, shape, and background colour. A "Hap" is a set of 3 pictures where each property (colour, shape, background colour) is either all the same or all different between the three pictures. For example, a red circle on a white background, a blue circle on a white background, and a yellow circle on a white background form a "Hap" because the colours are all different, and the shapes and backgrounds are all the same. This program identifies all of the Haps on a grid, given descriptions of the pictures on the grid.
+
 You will need a text file containing information about the Gyul! Hap! board you want to solve. Each line of the text file should contain the colour, shape, and background colour, in that order and separated by spaces, for a picture on your board. The information for each picture on the board should be on a different line. 
 
 You can see how your file should be formatted by looking at the "exampleInput.txt" file.
 
-To run the program from a command prompt, navigate to your directory containing the "gyulhap.hs" file, "solve.sh" file, and your input file, and execute the following command:
+To run the program from a command prompt, navigate to your directory containing the "GyulHap.hs" file, "solve.sh" file, and your input file, and execute the following command:
 
 `./solve.sh exampleInput.txt`
 
 Of course, you should replace "exampleInput.txt" with the name of your input file.
-
-The program can also be run in GHCI. For that, the Gyul! Hap! boards must be user-defined and supplied to the findHaps function. The boards are defined as a list of tuples, where each tuple describes a picture on the board. For example, the tuple (Red, Circle, Black) describes a picture of a red circle on a black background.
 
 ## Input file short-forms
 
