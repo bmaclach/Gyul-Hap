@@ -1,1 +1,1 @@
-cat $1 | runhaskell gyulhap
+cat $1 | runhaskell GyulHap
