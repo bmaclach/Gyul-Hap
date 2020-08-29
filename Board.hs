@@ -1,7 +1,7 @@
 module Board where
 
-import Data.List
-import qualified Data.Set as Set
+import Data.List (intercalate)
+import qualified Data.Set as Set (fromList)
 
 data Colour = Red | Blue | Yellow | Purple | Green | Orange deriving (Show, Eq, Read, Ord)
 
